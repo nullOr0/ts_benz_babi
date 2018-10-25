@@ -16,6 +16,7 @@ interface IProps extends IStoreProps {
 
 @inject(
     (store: IStore): IStoreProps => {
+        // @ts-ignore
         const { getLine, lineData } = store.lossOfBackflowStore
         const { timeParams } = store.pageHeaderStore
         // @ts-ignore
