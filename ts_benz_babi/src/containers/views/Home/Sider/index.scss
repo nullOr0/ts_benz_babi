@@ -1,0 +1,28 @@
+.sider {
+    :global(.ant-layout-sider-children) {
+        //display: flex;
+        flex-direction: column;
+    }
+}
+.menu {
+    flex: 1;
+}
+
+.trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.navTop{
+    margin-top: 30px;
+    padding-left: 20px;
+}
+.nav{
+    font-size:12px;
+    font-family:Adobe Heiti Std R;
+    font-weight:normal;
+    color:rgba(255,255,255,1);
+    float: left;
+}

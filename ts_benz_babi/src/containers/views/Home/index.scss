@@ -1,0 +1,17 @@
+@import '_base.scss';
+
+.content {
+    padding: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    & > * {
+        width: 100%;
+        padding: 15px;
+    }
+}
+//.myLayout{
+//  display: -webkit-box;
+//  background: none !important;
+//}

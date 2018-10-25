@@ -1,0 +1,31 @@
+//@import '_base.scss';
+
+.header {
+    display: flex;
+    padding: 0 15px 0 0;
+    justify-content: space-between;
+    align-items: center;
+    .logoStyle{
+        img{
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin-left: 24px;
+            margin-top: 12px;
+        }
+        span{
+            font-size: 18px;
+            color: #ffffff;
+            width: 100px;
+            float: left;
+            height: 64px;
+            margin-left: 16px;
+        }
+    }
+    .languageSwitch .select{
+        width:90px !important;
+    }
+}
+
+
+
