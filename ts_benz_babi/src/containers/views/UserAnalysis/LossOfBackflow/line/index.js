@@ -64,6 +64,7 @@ tslib_1.__decorate([
 ], Line.prototype, "componentDidUpdate", null);
 Line = tslib_1.__decorate([
     inject((store) => {
+        // @ts-ignore
         const { getLine, lineData } = store.lossOfBackflowStore;
         const { timeParams } = store.pageHeaderStore;
         // @ts-ignore

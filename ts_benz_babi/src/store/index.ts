@@ -13,3 +13,5 @@ export { default as userTrendsStore } from './userTrends'
 export { default as pageHeaderStore } from './pageHeader'
 
 export { default as lossOfBackflowStore} from './lossOfBackflow'
+
+export {default as regiondDstributionStore} from './regiondDstribution'
