@@ -1,8 +1,8 @@
 import * as React from 'react'
-import {inject, observer} from 'mobx-react'
-import {toJS, observable, action} from 'mobx'
-import {thirtyDays} from '@utils/date'
-import * as styles from '../index.scss'
+import {inject} from 'mobx-react'
+// import {toJS, observable, action} from 'mobx'
+// import {thirtyDays} from '@utils/date'
+// import * as styles from '../index.scss'
 interface  IStoreProps {
     getUserMapData?: (params) => Promise<any>
 }
@@ -21,6 +21,21 @@ interface IProps extends IStoreProps{
     }
 )
 class Map extends  React.Component<IProps>{
-
+    componentDidMount(){
+        this.props.getUserMapData({
+            // startTime: thirtyDays().t2,
+            // endTime: thirtyDays().t1,
+            queryTime: '2018-10-15 00:00:00',
+            areaType: 1,
+            timeType: 'day'
+        })
+    }
+    render (){
+        return(
+            <div>
+                地域分析
+            </div>
+        )
+    }
 }
 export default Map
