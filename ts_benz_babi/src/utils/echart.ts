@@ -109,7 +109,6 @@ export function multipleLines(id, xData, yData, legend) {
         setWindowSize(lines)
     } catch (e) {}
 }
-
 /*单条折线*/
 export function line(name, id, xData, yData, lineColor, areaColor) {
     const option = {
@@ -156,5 +155,63 @@ export function line(name, id, xData, yData, lineColor, areaColor) {
         const lineEchart = echarts.init(document.getElementById(id))
         lineEchart.setOption(option)
         setWindowSize(lineEchart)
+    } catch (e) {}
+}
+/*地图报表*/
+export function map(id, title, max, data) {
+    const option = {
+        title: {
+            text: title,
+            left: '3%',
+            bottom: '0%',
+            textStyle: {
+                color: '#fff',
+                fontSize: '12px'
+            },
+        },
+        tooltip : {
+            backgroundColor:'rgba(0, 0, 0, 0.9)',
+            padding: [10,20],
+            trigger: 'item',
+            formatter: function(params) {
+                let res = params.name+'<br/>';
+                let mySeries = option.series;
+                for (let i = 0; i < mySeries.length; i++) {
+                    for(let j=0;j<mySeries[i].data.length;j++){
+                        if(mySeries[i].data[j].name==params.name){
+                            res+=mySeries[i].name +' : '+mySeries[i].data[j].value+'</br>';
+                        }if(params.name==''){
+                            res='暂无数据'
+                        }
+                    }
+                }
+                return res;
+            }
+        },
+        dataRange: {
+            min: 0,
+            max: max,
+            left: 'center',
+            itemWidth: '8px',
+            itemHeight: '120px',
+            color: ['#00677F', '#FFFFFF'], // range 范围的颜色
+            range: [max, 0], // 文本，默认为数值文本
+            realtime:true,
+            calculable: true,
+            orient: 'horizontal',
+            textStyle:{color:'#fff'},
+        },
+        series: [{
+            name:title,
+            type: 'map',
+            mapType: 'china',
+            zoom:1.2,
+            data: data,
+        }]
+    }
+    try {
+        let map =echarts.init(document.getElementById(id))
+        map.setOption(option, true)
+        setWindowSize(map)
     } catch (e) {}
 }

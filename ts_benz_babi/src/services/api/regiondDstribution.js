@@ -4,5 +4,4 @@ export default {
         return http.post('/servicecount/area/echarts', data || {});
     }
 };
-imp;
 //# sourceMappingURL=RegiondDstribution.js.map

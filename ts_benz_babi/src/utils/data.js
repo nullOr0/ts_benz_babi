@@ -39,7 +39,34 @@ export function dataHandle(type, loadData, color, legendName) {
                 yData: yData
             };
             break;
+        case 'map':
+            let mapData = [];
+            let allValue = [];
+            for (let i in loadData.entitys) {
+                mapData.push({
+                    name: loadData.entitys[i].name.replace("省", "").replace("市", "").replace("特别行政区", "").replace("维吾尔", "").replace("回族", "").replace("壮族", "").replace("自治区", ""),
+                    value: loadData.entitys[i].data
+                });
+                allValue.push(loadData.entitys[i].data);
+            }
+            return {
+                data: mapData,
+                maxValue: getMaxValue(allValue)
+            };
+            break;
         default:
     }
+}
+/**
+ *  获取数组中最大值，在此主要用与map报表中
+* */
+export function getMaxValue(arr) {
+    let num = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (num < arr[i]) {
+            num = arr[i];
+        }
+    }
+    return num;
 }
 //# sourceMappingURL=data.js.map

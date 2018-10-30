@@ -18,6 +18,7 @@ interface IProps extends IStoreProps {
     (store: IStore): IStoreProps => {
         // @ts-ignore
         const { getLine, lineData } = store.lossOfBackflowStore
+        // @ts-ignore
         const { timeParams } = store.pageHeaderStore
         // @ts-ignore
         return { getLine, lineData, timeParams }
